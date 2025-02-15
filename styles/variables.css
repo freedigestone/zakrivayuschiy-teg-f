@@ -1,19 +1,16 @@
-
 :root {
   --basic-family: "Inter-Variable";
-  --accent-family: "PressStart2P-Regular";
+  --accent-family: "PressStart2P";
   --main-color: #000;
   --basic-size: 18px;
   --basic-wght: 400;
   --accent-wght: 700;
   --page-width: clamp(320px, 100vw, 1440px);
-  --header-width: clamp(320px, 48.3vw, 1440px);
-  --card-width: clamp(320px, 48.34vw, 1440px);
+  --header-width: clamp(320px, 48.3vw, 696px);
+  --card-width: clamp(320px, 48.34vw, 696px);
   --stroke-color: #fff;
   --contour-color: black;
-
   --red-color: #ff0000;
-
   --background-pattern: repeating-linear-gradient(
       90deg,
       #d3d3d3 0px,
@@ -30,5 +27,3 @@
     ),
     linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a 100%);
 }
-
-
