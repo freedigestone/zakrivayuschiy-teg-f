@@ -14,9 +14,8 @@
   display: grid;
   grid-template-columns: 1fr;
   align-items: center;
-  gap: 9.5vh;
-  width: var(--page-width, clamp(320px, 100vw, 1440px));
-  padding-top: 9.5vh;
+  gap: 100px;
+  
   color: var(--main-color, #000);
   font-family: var(--basic-family, "Inter-Variable"), sans-serif;
   font-size: var(--basic-size, 18px);
@@ -41,39 +40,49 @@
   background-size: cover;
   background-attachment: fixed;
   min-inline-size: 320px;
+  max-inline-size:1440px;
   min-block-size: 100dvb;
   font-variation-settings: "wght" var(--basic-wght, 400);
 }
 
 .header {
+ 
   display: grid;
   grid-template-columns: 1fr;
   justify-items: center;
+  padding-top: 103px;
 }
 
 .header-container {
+  
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: var(--header-width, clamp(320px, 48.3vw, 696px));
-  outline: 3px solid #000;
+  min-width: 320px;
+  max-width: 696px;
+  
+  border: 2px solid #000;
   font-family: var(--accent-family, "PressStart2P"), fantasy;
   min-inline-size: 345px;
   text-transform: uppercase;
   background-color: #fff;
 }
 
+.logo {
+  padding: 128px 120.5px;
+}
+
 .header__logo {
-  padding-top: 11.3vh;
   font-size: clamp(49px, 5vw, 65px);
-  line-height: 1.1;
+
+ 
 }
 
 .header__logo-subtitle {
-  padding: 1.2vh 0 11vh 0;
+  padding: 20px 55px 0;
   font-size: clamp(14px, 3.5vw, 23px);
-  line-height: 1.4;
-  white-space: nowrap;
+  
+ 
 }
 
 .main {
@@ -84,18 +93,20 @@
 
 .main-container {
   display: grid;
-  gap: 4.8vh;
-  width: var(--card-width, clamp(320px, 48.34vw, 696px));
+  gap: 50px;
+  min-width: 320px;
+  max-width: 696px;
+ 
   padding-bottom: 103px;
 }
 
 .card {
-  outline: 3px solid #000;
   background-color: #fff;
 }
 
 .card__title {
-  padding: 4px 0 7px 10px;
+  padding: 4px 8px;
+  border: 2px solid currentColor;
 }
 
 .title {
@@ -109,7 +120,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  outline: 3px solid currentColor;
+  border: 2px solid currentColor;
   aspect-ratio: 1 / 1;
 }
 
@@ -121,7 +132,7 @@
   transition: filter 0.3s ease;
 }
 
-.filter1-sepia {
+.filter-sepia {
   filter: sepia(100%);
 }
 
@@ -151,8 +162,8 @@
 
 .figure__label {
   position: absolute;
-  top: 26px;
-  right: 25px;
+  top: 24px;
+  right: 24px;
   opacity: 50%;
   color: currentColor;
   font-family: var(--accent-family, "PressStart2P"), fantasy;
@@ -172,11 +183,12 @@
 }
 
 .card__content {
+  border: 2px solid currentColor;
   display: flex;
   flex-direction: column;
   gap: 25px;
-  padding: 28px 25px 25px 25px;
-  line-height: 21.5px;
+  padding: 25px 24px;
+  line-height: 117%;
 }
 
 .like-button {
@@ -187,14 +199,15 @@
   gap: 7px;
 }
 
-.card__icon-button:focus {
-  border: none;
+.card__icon-button:focus-visible {
+  outline: none;
+  border-color: #000;
 }
 
 .card__icon-button {
-  height: 38px;
-  width: 38px;
-  outline: 2px solid transparent;
+  height: 42.8px;
+  width: 42.8px;
+  border: 2px solid transparent;
   transition: outline-color 0.3s ease;
   display: flex;
   align-items: center;
@@ -210,13 +223,13 @@
 
 .card__button {
   position: relative;
-  outline: 2px solid currentColor;
+  border: 2px solid currentColor;
   overflow: hidden;
-  padding: 6px 23px;
+  padding: 9px 17px;
 }
 
-.card__button:focus {
-  border: none;
+.card__button:focus,:focus-visible {
+  outline: none;
 }
 
 .card__button .button__text,
@@ -229,6 +242,7 @@
   color: var(--stroke-color, #fff);
   font-family: var(--accent-family, "PressStart2P"), fantasy;
   font-size: 14px;
+  line-height: 90%;
   text-align: center;
   transition: color 0.3s ease;
   mix-blend-mode: difference;
@@ -260,7 +274,7 @@
 
 dialog {
   gap: 30px;
-  min-inline-size: 353px;
+ 
   border: none;
   padding: 30px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
@@ -284,6 +298,7 @@ dialog::backdrop {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  max-width: 293px;
   gap: 20px;
   padding-bottom: 30px;
 }
@@ -294,8 +309,8 @@ dialog::backdrop {
 }
 
 .modal-text {
+  max-width:234px;
   font-family: var(--accent-family, "PressStart2P"), fantasy;
-
   font-size: 14px;
   line-height: 150%;
   text-transform: uppercase;
@@ -314,33 +329,38 @@ dialog::backdrop {
 
 @media (width <= 380px) {
   .page {
-    gap: 14.2vh;
+    gap: 100px;
     width: 100%;
-    padding-top: 15.5vh;
+   
   }
 
   .header-container {
     width: 100%;
+   
+  }
+
+  .logo {
+    padding: 118px 14px;
   }
 
   .header__logo {
-    padding-top: 17vh;
-    line-height: 65px;
+    font-size: 49px;
+   
   }
 
   .header__logo-subtitle {
-    padding-bottom: 18vh;
+    font-size: 14px;
+    padding: 20px 66px 0;
   }
 
   .main-container {
     width: 100%;
-    padding-top: 10px;
-    gap: 8vh;
+    gap:47.5px;
     padding-bottom: 100px;
   }
 
   .card__title {
-    padding-right: 7px;
+    padding: 5px 10px;
   }
 
   .card__content {
@@ -368,10 +388,24 @@ dialog::backdrop {
   }
 
   dialog {
-    width: 341px;
-    padding: 30px 40px;
+    max-width: 341px;
+    padding: 30px 42px;
+    
   }
+
+  .modal-content {
+    max-width: 257px;
+  }
+
+  .modal-text {
+    max-width: 198px;
+  }
+
   .ok-button {
-    width: 257px;
+    max-width: 257px;
+  }
+
+  .button__text {
+    padding-top: 5px;
   }
 }
