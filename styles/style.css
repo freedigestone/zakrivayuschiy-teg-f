@@ -10,12 +10,13 @@
 
 */
 
+
+
 .page {
   display: grid;
   grid-template-columns: 1fr;
   align-items: center;
   gap: 100px;
-  
   color: var(--main-color, #000);
   font-family: var(--basic-family, "Inter-Variable"), sans-serif;
   font-size: var(--basic-size, 18px);
@@ -40,49 +41,41 @@
   background-size: cover;
   background-attachment: fixed;
   min-inline-size: 320px;
-  max-inline-size:1440px;
+  max-inline-size: 1440px;
   min-block-size: 100dvb;
   font-variation-settings: "wght" var(--basic-wght, 400);
 }
 
 .header {
- 
-  display: grid;
-  grid-template-columns: 1fr;
-  justify-items: center;
-  padding-top: 103px;
+  display: flex;
+  justify-content: center;
+  padding-top: 100px;
 }
 
 .header-container {
-  
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   min-width: 320px;
   max-width: 696px;
-  
   border: 2px solid #000;
   font-family: var(--accent-family, "PressStart2P"), fantasy;
-  min-inline-size: 345px;
   text-transform: uppercase;
   background-color: #fff;
+  min-inline-size: 345px;
 }
 
 .logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 128px 120.5px;
 }
 
 .header__logo {
   font-size: clamp(49px, 5vw, 65px);
-
- 
 }
 
 .header__logo-subtitle {
   padding: 20px 55px 0;
   font-size: clamp(14px, 3.5vw, 23px);
-  
- 
 }
 
 .main {
@@ -93,10 +86,9 @@
 
 .main-container {
   display: grid;
-  gap: 50px;
+  gap: 51px;
   min-width: 320px;
   max-width: 696px;
- 
   padding-bottom: 103px;
 }
 
@@ -105,8 +97,8 @@
 }
 
 .card__title {
-  padding: 4px 8px;
   border: 2px solid currentColor;
+  padding: 5px 8px;
 }
 
 .title {
@@ -127,7 +119,6 @@
 .figure__image {
   width: 100%;
   height: 100%;
-
   object-fit: cover;
   transition: filter 0.3s ease;
 }
@@ -168,11 +159,11 @@
   color: currentColor;
   font-family: var(--accent-family, "PressStart2P"), fantasy;
   font-size: 14px;
+  text-transform: uppercase;
   text-shadow: -1px -1px 0 var(--stroke-color, #fff),
     1px -1px 0 var(--stroke-color, #fff), -1px 1px 0 var(--stroke-color, #fff),
     1px 1px 0 var(--stroke-color, #fff);
   mix-blend-mode: hard-light;
-  text-transform: uppercase;
 }
 
 @supports (-webkit-text-stroke: 1px var(--stroke-color, #fff)) {
@@ -183,13 +174,15 @@
 }
 
 .card__content {
-  border: 2px solid currentColor;
   display: flex;
   flex-direction: column;
   gap: 25px;
+  border: 2px solid currentColor;
   padding: 25px 24px;
   line-height: 117%;
 }
+
+
 
 .like-button {
   display: flex;
@@ -197,38 +190,41 @@
   justify-content: end;
   align-items: center;
   gap: 7px;
+  margin-top: 2px;
 }
 
 .card__icon-button:focus-visible {
-  outline: none;
   border-color: #000;
+  outline: none;
 }
 
 .card__icon-button {
-  height: 42.8px;
-  width: 42.8px;
-  border: 2px solid transparent;
-  transition: outline-color 0.3s ease;
   display: flex;
   align-items: center;
+  width: 38px;
+  height: 38px;
+  border: 2px solid transparent;
   padding: 0;
+  transition: outline-color 0.3s ease;
 }
 
 .card__like-button {
   align-self: end;
+  border: none;
   min-inline-size: 130px;
   min-block-size: 38px;
-  border: none;
 }
 
 .card__button {
+  height: 38px;
   position: relative;
   border: 2px solid currentColor;
+  padding: 7px 17px;
   overflow: hidden;
-  padding: 9px 17px;
 }
 
-.card__button:focus,:focus-visible {
+.card__button:focus,
+:focus-visible {
   outline: none;
 }
 
@@ -254,14 +250,20 @@
 }
 
 .save-button {
+  padding: 0;
   min-inline-size: 335px;
   min-block-size: 51px;
-  padding: 0;
 }
 
 .save__button-content {
-  padding: 13px 20px;
+  padding: 12px 21px;
+    display: flex
+;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
 }
+
 .floppy {
   width: 21px;
   height: 21px;
@@ -274,13 +276,12 @@
 
 dialog {
   gap: 30px;
- 
-  border: none;
+  border: 2px solid var(--main-color);
   padding: 30px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   opacity: 0;
-  transform: scale(0.9);
   transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: scale(0.9);
 }
 
 .dialog[open] {
@@ -298,8 +299,8 @@ dialog::backdrop {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  max-width: 293px;
   gap: 20px;
+  max-width: 293px;
   padding-bottom: 30px;
 }
 
@@ -309,7 +310,7 @@ dialog::backdrop {
 }
 
 .modal-text {
-  max-width:234px;
+  max-width: 234px;
   font-family: var(--accent-family, "PressStart2P"), fantasy;
   font-size: 14px;
   line-height: 150%;
@@ -322,7 +323,7 @@ dialog::backdrop {
   align-items: center;
   width: 293px;
   height: 38px;
-  border: 1px solid #000;
+  border: 2px solid #000;
   padding: 9px 17px;
   text-transform: uppercase;
 }
@@ -331,31 +332,28 @@ dialog::backdrop {
   .page {
     gap: 100px;
     width: 100%;
-   
   }
 
   .header-container {
     width: 100%;
-   
   }
 
   .logo {
-    padding: 118px 14px;
+    padding: 120px 14px;
   }
 
   .header__logo {
     font-size: 49px;
-   
   }
 
   .header__logo-subtitle {
-    font-size: 14px;
     padding: 20px 66px 0;
+    font-size: 14px;
   }
 
   .main-container {
+    gap: 49px;
     width: 100%;
-    gap:47.5px;
     padding-bottom: 100px;
   }
 
@@ -364,12 +362,12 @@ dialog::backdrop {
   }
 
   .card__content {
-    padding: 21px 28px 25px 27px;
+    padding: 22px 28px 25px 27px;
   }
 
   .figure__label {
-    right: 13px;
     top: 21px;
+    right: 13px;
   }
 
   .floppy {
@@ -379,18 +377,19 @@ dialog::backdrop {
 
   .save-button {
     min-inline-size: 306px;
-    min-block-size: 80px;
+    min-block-size: 84px;
   }
 
   .save__button-content {
     display: flex;
     flex-direction: column;
+    gap: 7px;
+    padding: 15px 2px 18px 0;
   }
 
   dialog {
     max-width: 341px;
     padding: 30px 42px;
-    
   }
 
   .modal-content {
@@ -406,6 +405,6 @@ dialog::backdrop {
   }
 
   .button__text {
-    padding-top: 5px;
+    padding-left: 5px;
   }
 }
