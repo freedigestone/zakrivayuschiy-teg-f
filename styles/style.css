@@ -53,8 +53,8 @@
 }
 
 .header-container {
-  min-width: 320px;
   max-width: 696px;
+  width: 100vw;
   border: 2px solid #000;
   font-family: var(--accent-family, "PressStart2P"), fantasy;
   text-transform: uppercase;
@@ -66,16 +66,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 128px 120.5px;
+  padding: clamp(80px, 10vw, 128px) clamp(20px, 5vw, 120.5px);
 }
 
 .header__logo {
-  font-size: clamp(49px, 5vw, 65px);
+  font-size: clamp(49px, 6vw, 65px);
 }
 
 .header__logo-subtitle {
   padding: 20px 55px 0;
-  font-size: clamp(14px, 3.5vw, 23px);
+  font-size: clamp(14px, 2.5vw, 23px);
 }
 
 .main {
@@ -85,10 +85,10 @@
 }
 
 .main-container {
+  max-width: 696px;
   display: grid;
   gap: 51px;
-  min-width: 320px;
-  max-width: 696px;
+ width: 100vw;
   padding-bottom: 103px;
 }
 
@@ -394,10 +394,13 @@ dialog::backdrop {
 
   .modal-content {
     max-width: 257px;
+    gap: 17px;
+
   }
 
   .modal-text {
     max-width: 198px;
+    
   }
 
   .ok-button {
